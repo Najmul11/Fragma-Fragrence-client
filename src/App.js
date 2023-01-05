@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { createContext, useState } from 'react';
+import { router } from './router/Routes';
+import {RouterProvider} from 'react-router-dom'
+
+const DarkContext=createContext()
 
 function App() {
+  const [darkMode, setDarkMode]=useState(false)
+  const darkInfo={darkMode, setDarkMode}
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DarkContext.Provider value={darkInfo}>
+        <div className={darkMode ? 'dark' :''}>
+            <RouterProvider router={router}></RouterProvider>
+        </div>
+    </DarkContext.Provider>
   );
 }
 

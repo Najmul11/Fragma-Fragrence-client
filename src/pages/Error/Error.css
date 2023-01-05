@@ -1,0 +1,8 @@
+.error-content{
+    background-image: url('../../assets/images/error.png');
+    background-repeat: no-repeat;
+    background-size:cover;
+  }
+  .error-btn a:hover button{
+      background-color: goldenrod;
+  }
