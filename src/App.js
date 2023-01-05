@@ -1,8 +1,10 @@
 import { createContext, useState } from 'react';
 import { router } from './router/Routes';
 import {RouterProvider} from 'react-router-dom'
+import { Toaster } from 'react-hot-toast';
 
-const DarkContext=createContext()
+
+export const DarkContext=createContext()
 
 function App() {
   const [darkMode, setDarkMode]=useState(false)
@@ -13,6 +15,7 @@ function App() {
         <div className={darkMode ? 'dark' :''}>
             <RouterProvider router={router}></RouterProvider>
         </div>
+        <Toaster/>
     </DarkContext.Provider>
   );
 }
