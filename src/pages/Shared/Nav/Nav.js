@@ -36,7 +36,10 @@ const Nav = () => {
                           <li className="px-3"><NavLink to='/services' className='btn btn-ghost rounded-md'>Services</NavLink></li>
                           <li className="px-3"><NavLink to='/blog' className='btn btn-ghost rounded-md'>Blog</NavLink></li>
                           {
-                            user && <li><button onClick={handleLogout} className="btn btn-ghost rounded-md">Logout</button></li>
+                            user && <>
+                                <li className="px-3"><NavLink to='/dashboard' className='btn btn-ghost rounded-md'>Dashboard</NavLink></li>
+                                <li><button onClick={handleLogout} className="btn btn-ghost rounded-md">Logout</button></li>
+                            </>
                           }
                         </ul>
                     </div>
@@ -48,8 +51,11 @@ const Nav = () => {
                        <li className="px-3"><NavLink to='/services' className='btn btn-ghost rounded-md'>Services</NavLink></li>
                        <li className="px-3"><NavLink to='/blog' className='btn btn-ghost rounded-md'>Blog</NavLink></li>
                        {
-                            user && <li><button onClick={handleLogout} className="btn btn-ghost rounded-md">Logout</button></li>
-                       }
+                            user && <>
+                                <li className="px-3"><NavLink to='/dashboard' className='btn btn-ghost rounded-md'>Dashboard</NavLink></li>
+                                <li><button onClick={handleLogout} className="btn btn-ghost rounded-md">Logout</button></li>
+                            </>
+                          }
                     </ul>
                 </div>
                 <div className="navbar-end">
@@ -65,7 +71,7 @@ const Nav = () => {
                         <a alt='' href='whatsapp://send?text=WHATEVER_LINK_OR_TEXT_YOU_WANT_TO_SEND' className="btn btn-ghost ml-4 text-green-500 group"><BsWhatsapp className="mr-2 group-hover:scale-125"/> Whatsapp</a>
                         {
                             user ?
-                            <div className="dropdown dropdown-end">
+                            <div className="dropdown dropdown-end hidden md:block">
                                 <div className="tooltip tooltip-left" data-tip={user?.displayName}>
                                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                         <div className="w-10 rounded-full">
@@ -81,6 +87,9 @@ const Nav = () => {
                             :
                             <NavLink to='/login' className="ml-2 md:ml-4 btn btn-ghost">Login</NavLink>
                         }
+                        <label htmlFor="dashboard-drawer" tabIndex={0} className="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                        </label>
                     </div>
                 </div>
             </div>
