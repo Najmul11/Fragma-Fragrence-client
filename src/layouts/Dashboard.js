@@ -1,11 +1,17 @@
 import React,{useContext} from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider';
+import useAdmin from '../hooks/useAdmin';
+import useSeller from '../hooks/useSeller';
+import useTitle from '../hooks/useTitle';
 import Nav from '../pages/Shared/Nav/Nav';
 
 const Dashboard = () => {
-    const {user,isAdmin, isSeller}=useContext(AuthContext)
-    // const [isAdmin]=useAdmin(user.email)
+    useTitle('dashboard')
+    const {user}=useContext(AuthContext)
+    const [isSeller]=useSeller(user.email)
+    const [isAdmin]=useAdmin(user.email)
+    
     return (
         <div>
             <Nav></Nav>
