@@ -28,7 +28,7 @@ const Register = () => {
             updateUserProfile(userInfo)
                 .then(() => { 
                     saveUser(data.name, data.email)
-                    navigate('/')
+                    
                 })
                 .catch(err => console.log(err));
        })
@@ -49,7 +49,7 @@ const Register = () => {
             body:JSON.stringify(user)
         })
         .then(res=>res.json())
-        .then(data=>{})
+        .then(data=>{navigate('/')})
     }
 
 

@@ -34,7 +34,7 @@ const Login = () => {
     }
 
     const handleMarkSeller=(email)=>{
-        fetch(`http://localhost:5000/users/seller/${email}`,{
+        fetch(`http://localhost:5000/users/usertype/${email}`,{
             method:'PUT',
         })
         .then(res=>res.json())
