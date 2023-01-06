@@ -45,6 +45,7 @@ const Login = () => {
         setLoginError('');
         signInWithGoogle()
         .then(result => {
+          
             navigate(from, {replace: true});
             
         })

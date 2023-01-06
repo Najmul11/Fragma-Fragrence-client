@@ -11,7 +11,7 @@ const Dashboard = () => {
     const {user}=useContext(AuthContext)
     const [isSeller]=useSeller(user.email)
     const [isAdmin]=useAdmin(user.email)
-    
+
     return (
         <div>
             <Nav></Nav>
@@ -33,7 +33,7 @@ const Dashboard = () => {
                         {
                             isAdmin && <>
                                 <li><Link to={'/dashboard/allsellers'}>All sellers</Link></li>
-                                <li><Link to={'/dashboard/allbuyers'}>Add buyers</Link></li>
+                                <li><Link to={'/dashboard/allbuyers'}>All buyers</Link></li>
                             </>
                         }
                     </ul>

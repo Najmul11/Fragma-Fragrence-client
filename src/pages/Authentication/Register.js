@@ -8,12 +8,11 @@ import useTitle from '../../hooks/useTitle';
 
 const Register = () => {
     useTitle('signup')
+    const navigate=useNavigate()
     const {createUser, updateUserProfile, signInWithGoogle}=useContext(AuthContext)
 
     const [signUpError, setSignUPError] = useState('')
     
-    const navigate=useNavigate()
-
   
     const {register, handleSubmit, formState:{errors}} =useForm()
 
@@ -56,7 +55,10 @@ const Register = () => {
     const handleGoogleSignIn=()=>{
         setSignUPError('');
         signInWithGoogle()
-        .then(result => {})
+        .then(result => {
+            const user= result.user;
+            saveUser(user.displayName, user.email)
+        })
         .catch(error => {
             setSignUPError(error.message);
         });
