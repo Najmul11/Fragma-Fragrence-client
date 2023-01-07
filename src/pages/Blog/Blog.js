@@ -14,7 +14,7 @@ const Blog = () => {
     return (
         <div className='dark:bg-black h-screen py-10'>
             <Link to='/' className='flex justify-center '><button className='btn btn-sm hover:bg-orange-500'>Back to Home</button></Link>
-            <div className=' py-20 flex flex-col lg:flex-row '>
+            <div className=' my-10 flex flex-col lg:flex-row '>
                 <div className=' md:w-1/2'>
                     <img className=' mx-auto' src={qna} alt="" />
                 </div>
