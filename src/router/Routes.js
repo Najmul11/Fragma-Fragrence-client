@@ -12,6 +12,7 @@ import MyOrders from "../pages/Dashboard/MyOrders/MyOrders";
 import MyProducts from "../pages/Dashboard/MyProducts/MyProducts";
 import Error from "../pages/Error/Error";
 import Home from "../pages/Home/Home/Home";
+import Products from "../pages/Products/Products";
 import AdminRoute from "./AdminRoute";
 import PrivateRoute from "./PrivateRoute";
 import SellerRoute from "./SellerRoute";
@@ -24,6 +25,10 @@ export const router=createBrowserRouter([
             {
                 path:'/',
                 element:<Home></Home>
+            },
+            {
+                path:'/categories/:id',
+                element:<PrivateRoute><Products></Products></PrivateRoute>
             },
             {
                 path:'/login',

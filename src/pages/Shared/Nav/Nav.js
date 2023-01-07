@@ -48,7 +48,7 @@ const Nav = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
                        <li className="px-3"><Link to='/' className="rounded-md btn btn-ghost">Home</Link></li>
-                       <li className="px-3"><NavLink to='/services' className='btn btn-ghost rounded-md'>Services</NavLink></li>
+                       <li className="px-3"><NavLink to='/allproducts' className='btn btn-ghost rounded-md'>All products</NavLink></li>
                        <li className="px-3"><NavLink to='/blog' className='btn btn-ghost rounded-md'>Blog</NavLink></li>
                        {
                             user && <>
