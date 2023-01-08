@@ -1,8 +1,12 @@
+adminEmail: <web3@phero.com>
+
+adminPassword: <123456>
+
 # Product resale
-### Live: [Product Resale](https://rooftop-doctor.web.app/)
+### Live: [Product Resale](https://product-resale-43710.firebaseapp.com/)
 ###### For the Assignment checker
-> Out of 13 main tasks, finished 9 except 7.2 , 10 on time (3days)  
-> Out of 10 bonus tasks, finished 7 except 8,9,10  on time (3days)  
+> finished all main task on time(4days) 
+> Out of 10 bonus tasks, finished 9 task expect task 5 untouched and task 7 half done(stripe) (4days)  
 > I will keep pushing and update the site  
 
 
