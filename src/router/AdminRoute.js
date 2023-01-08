@@ -14,7 +14,7 @@ const AdminRoute = ({children}) => {
         return children
     }
     if (loading || isAdminLoading) {
-        return <progress className="progress w-56"></progress>
+        return <div className='flex justify-center h-screen items-center'><progress className=" progress w-56 "></progress></div>
     }
     return logout().then(res=>{<Navigate to="/login" state={{from: location}} replace></Navigate>}).catch(err=>{})
 };

@@ -1,13 +1,20 @@
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { useParams } from 'react-router-dom';
 import ProductCard from './ProductCard';
 import BookingModal from './BookingModal';
+import axios from 'axios';
 
 
 const Products = () => {
     const params=useParams()
     const [productData, setProductData]=useState(null)
+    const [category, setCategory]=useState({})
+
+    useEffect(()=>{
+        axios.get(`http://localhost:5000/category/${params.id}`)
+        .then(res=>setCategory(res.data))
+    },[params.id])
 
     const {data:products=[], isLoading}=useQuery({
         queryKey:['products'],
@@ -17,9 +24,13 @@ const Products = () => {
             return data
         }
     })
+    if (isLoading) {
+        <div className='flex items-center h-screen justify-center'><progress className=" progress w-56 "></progress></div>
+    }
     return (
         <div className='py-5 dark:bg-black'>
-            <h1 className="text-center text-5xl font-light dark:text-gray-400 ">All products</h1>
+            <h1 className="text-center text-5xl font-light dark:text-gray-400 ">All {category.categoryName} </h1>
+           
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center container mx-auto gap-10 pt-12 pb-20'>
                {
                 products.map(product=><ProductCard key={product._id} product={product} setProductData={setProductData}></ProductCard>)

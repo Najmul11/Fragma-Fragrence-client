@@ -10,7 +10,7 @@ const MyProducts = () => {
 
 
 
-    const {data:products=[], refetch}=useQuery({
+    const {data:products=[], refetch , isLoading}=useQuery({
         queryKey:['products'],
         queryFn:async()=>{
             const res=await fetch(`http://localhost:5000/products?email=${user?.email}`)
@@ -18,6 +18,9 @@ const MyProducts = () => {
             return data
         }
     })
+    if (isLoading) {
+        <div className='flex justify-center h-screen items-center'><progress className=" progress w-56 "></progress></div>
+    }
 
     const handleDelete=(id,name)=>{
         fetch(`http://localhost:5000/products/${id}`,{

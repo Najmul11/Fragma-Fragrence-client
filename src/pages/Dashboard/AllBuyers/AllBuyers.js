@@ -9,7 +9,7 @@ const AllBuyers = () => {
 
     const [modalData, setModalData]=useState(null)
     
-    const {data:buyers=[], refetch}=useQuery({
+    const {data:buyers=[], refetch, isLoading}=useQuery({
         queryKey:['buyers'],
         queryFn:async()=>{
             const res=await fetch('http://localhost:5000/users')
@@ -17,6 +17,9 @@ const AllBuyers = () => {
             return data
         }
     })
+    if (isLoading) {
+        <div className='flex justify-center h-screen items-center'><progress className=" progress w-56 "></progress></div>
+    }
 
     const closeModal=()=>{
         setModalData(null)
