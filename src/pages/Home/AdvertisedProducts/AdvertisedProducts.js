@@ -23,14 +23,15 @@ const AdvertisedProducts = () => {
     }
 
     return (
-       <div className='dark:bg-black '>
+        <div>
+            {
+                products.length &&
+                <div className='dark:bg-black '>
             <div className='pt-5 pb-12'>
                 <h2 className='text-5xl font-light dark:text-gray-400 text-center'>Peoples's choice best fragrences</h2>
                 <p className='dark:text-gray-400 text-center'>advertised by sellers</p>
             </div>
             <div className='bg-black lg:py-20 '>
-            {
-                products.length &&
                 <Swiper
                     className='md:w-1/2 mx-auto rounded-xl bg-black'
                     spaceBetween={50}
@@ -45,9 +46,41 @@ const AdvertisedProducts = () => {
                         </SwiperSlide>)
                     }
                 </Swiper> 
-            }
             </div>
        </div>
+
+            }
+        </div>
+
+
+
+
+
+    //    <div className='dark:bg-black '>
+    //         <div className='pt-5 pb-12'>
+    //             <h2 className='text-5xl font-light dark:text-gray-400 text-center'>Peoples's choice best fragrences</h2>
+    //             <p className='dark:text-gray-400 text-center'>advertised by sellers</p>
+    //         </div>
+    //         <div className='bg-black lg:py-20 '>
+    //         {
+    //             // products.length &&
+    //             <Swiper
+    //                 className='md:w-1/2 mx-auto rounded-xl bg-black'
+    //                 spaceBetween={50}
+    //                 loop={true}
+    //                 autoplay={{delay:2500,pauseOnMouseEnter:true, disableOnInteraction:false}}
+    //                 slidesPerView={1}
+    //                 modules={[Autoplay,Pagination]}
+    //                 >
+    //                 {
+    //                     products.map(product=><SwiperSlide key={product._id}>
+    //                         <img className='lg:h-[600px] mx-auto rounded-xl' src={product.productImage} alt="" />
+    //                     </SwiperSlide>)
+    //                 }
+    //             </Swiper> 
+    //         }
+    //         </div>
+    //    </div>
     );
 };
 
