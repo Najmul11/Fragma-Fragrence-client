@@ -20,6 +20,15 @@ const AllSellers = () => {
     if (isLoading) {
         <div className='flex justify-center h-screen items-center'><progress className=" progress w-56 "></progress></div>
     }
+
+    const handleVerify=(email)=>{
+        fetch(`http://localhost:5000/verifyseller/${email}`,{
+            method:'PUt',
+        })
+        .then(res=>res.json())
+        .then(data=>{})
+    }
+
     const closeModal=()=>{
         setModalData(null)
     }
@@ -47,6 +56,7 @@ const AllSellers = () => {
                                 <td>{seller.email}</td>
                                 <td>
                                     <label onClick={()=>setModalData(seller)} htmlFor="confirm-modal" className="btn btn-xs bg-red-200 hover:bg-red-400 text-black">Delete</label>
+                                    <button onClick={()=>handleVerify(seller.email)} className="btn ml-3 btn-xs bg-green-200 hover:bg-green-300 text-black">Verify</button>
                                 </td>
                             </tr>)
                         }

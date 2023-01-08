@@ -15,6 +15,13 @@ const Wishlist = () => {
             return data
         }
     })
+
+    if (isLoading) {
+       return <div className='flex justify-center h-screen items-center'>
+                <progress className="bg-orange-500 progress w-56 "></progress>
+             </div>
+    }
+    
     return (
         <div className="overflow-x-auto">
         <h2 className='text-2xl font-medium italic mb-5 text-black'>My wishlist</h2>

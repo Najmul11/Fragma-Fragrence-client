@@ -18,7 +18,8 @@ const ProductCard = ({product, setProductData}) => {
         juiceLeft,
         sellerName,
         location,
-        status 
+        status,
+        sellerStatus 
     }=product
 
     const handleWishList=()=>{
@@ -65,7 +66,7 @@ const ProductCard = ({product, setProductData}) => {
                 <p className=' flex items-center'>Posted by 
                     <span className='bg-gray-200 bg-opacity-75 rounded-lg px-2 mx-2 font-light flex items-center dark:text-black'> 
                         {sellerName}
-                        {status==='verified'? <span className='text-2xl text-blue-700'><BsCheckAll/></span>:''}
+                        {sellerStatus==='verified'? <span className='text-2xl text-blue-700 flex items-center'><BsCheckAll/><small className='text-sm font-medium'>verified</small></span>:''}
                     </span>
                 </p>
                 <p>Location: {location}</p>
