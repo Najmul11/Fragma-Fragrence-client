@@ -8,17 +8,16 @@ const Footer = () => {
             <footer className="footer p-20   container mx-auto justify-items-center">
             <div className='font-medium  dark:text-gray-300'>
                 <span className="footer-title dark:text-orange-500">Services</span> 
-                <a href='http://localhost:3000/' className="link link-hover">Coating</a> 
-                <a href='http://localhost:3000/' className="link link-hover">Replacing</a> 
-                <a href='http://localhost:3000/' className="link link-hover">Inspecting</a> 
-                <a href='http://localhost:3000/' className="link link-hover">Repairing</a>
+                <a href='http://localhost:3000/' className="link link-hover">Designers Fragrence</a> 
+                <a href='http://localhost:3000/' className="link link-hover">Mid beast</a> 
+            
             </div> 
             <div className='font-medium dark:text-gray-300'>
                 <span className="footer-title dark:text-orange-500">Explore</span> 
                 <a href='#home' className="link link-hover">About</a> 
                 <a href='#experience' className="link link-hover">Experiences</a> 
                 <a href='#faq' className="link link-hover">Faq</a> 
-                <a href='#services' className="link link-hover">Services</a>
+                <a href='#services' className="link link-hover">All products</a>
             </div> 
             <div className='font-medium  dark:text-gray-300'>
                 <span className="footer-title dark:text-orange-500">Social</span> 

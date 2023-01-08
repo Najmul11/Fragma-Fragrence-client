@@ -11,10 +11,9 @@ const Faq = () => {
                             <h2 className=" card-title text-5xl font-light dark:text-gray-400">Your Best Fragrence<br />Resale  Store in Town</h2>
                             <h4 className='text-2xl  mt-10  dark:text-gray-400'>Frequrntly asked questions</h4>
                             <div className='mt-3'>
-                                <Collapse title={'Why the price is so high?'} description={'Yes everyday'}></Collapse>
-                                <Collapse title={'Do you provide inspection service?'} description={'Yes this service is most wanted'}></Collapse>
-                                <Collapse title={'Your service avaliavle on midnight?'} description={'No, daytime only'}></Collapse>
-                                <Collapse title={'What you do with the broken things?'} description={'Sell and earn money from that also'}></Collapse>
+                                <Collapse title={'If seller is fraud who takes the responsibility?'} description={'Only you'}></Collapse>
+                                <Collapse title={'Do you have showroom?'} description={'No we are online only'}></Collapse>
+                                <Collapse title={'Do you verify fake sellers?'} description={'Yes always'}></Collapse>
                             </div>
                         </div>
                     </div>

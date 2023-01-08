@@ -10,6 +10,7 @@ const BookingModal = ({productData, setProductData}) => {
         productName,
         resalePrice, 
         juiceLeft,
+        productImage
     }=productData
 
     const handleBooking=(e)=>{
@@ -24,6 +25,7 @@ const BookingModal = ({productData, setProductData}) => {
             buyerName:user?.displayName,
             buyerEmail:user?.email,
             pickup:location,
+            productImage,
             phone,  
         }
 

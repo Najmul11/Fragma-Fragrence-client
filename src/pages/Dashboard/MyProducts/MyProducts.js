@@ -35,6 +35,18 @@ const MyProducts = () => {
             }
         })
     }
+
+    const handleAdvertise=(product)=>{
+        fetch('http://localhost:5000/advertisedproducts',{
+                method:'POST',
+                headers:{
+                    'content-type':'application/json'
+                },
+                body:JSON.stringify(product)
+            })
+            .then(res=>res.json())
+            .then(data=>{})
+    }
   
     return (
          <div className="overflow-x-auto">
@@ -60,7 +72,10 @@ const MyProducts = () => {
                                 <td className='text-2xl'>${product.resalePrice}</td>
                                 <td>{product.status}</td>
                                 <td>
-                                <button  className="btn mr-3 btn-xs bg-green-200 hover:bg-green-400 text-black">Advertise</button>
+                                    {
+                                        product.status==='unsold' &&
+                                        <button onClick={()=>handleAdvertise(product)}  className="btn mr-3 btn-xs bg-green-200 hover:bg-green-400 text-black">Advertise</button>
+                                    }
                                     <button onClick={()=>handleDelete(product._id, product.productName)} className="btn btn-xs bg-red-200 hover:bg-red-400 text-black">Delete</button>
                                 </td>
                             </tr>)
