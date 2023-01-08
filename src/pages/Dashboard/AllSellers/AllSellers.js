@@ -63,7 +63,7 @@ const AllSellers = () => {
                 >
 
                 </ConfirmModal>
-        }
+            }
         </div>
     );
 };

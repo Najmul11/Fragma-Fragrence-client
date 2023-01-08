@@ -44,7 +44,8 @@ const AddProduct = () => {
                     location:data.location,
                     usingTime:data.usingTime,
                     sellerName:user?.displayName,
-                    productImage:imgData.data.url
+                    productImage:imgData.data.url,
+                    sellerEmail:user?.email
                 }
 
                 fetch('http://localhost:5000/products',{
@@ -65,12 +66,12 @@ const AddProduct = () => {
     }
     return (
         <div className='h-[800px] flex justify-center  dark:bg-black'>
-            <div className='w-96 p-7 dark:text-gray-300'>
-                <h2 className='text-4xl mb-5 font-light'>Add Product</h2>
+            <div className='w-96 p-7 '>
+                <h2 className='text-4xl mb-5 font-light dark:text-gray-400'>Add Product</h2>
                 <form onSubmit={handleSubmit(handleAddProduct)}>
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
-                            <span className="label-text">Select category</span>
+                            <span className="label-text dark:text-gray-400">Select category</span>
                         </label>
                         <select className="select select-bordered select-sm w-full max-w-xs" {...register('category', {required: "Category is required"}) }>
                             {
@@ -104,7 +105,7 @@ const AddProduct = () => {
                         {errors.productImage && <p className='text-red-600 my-1'>{errors.productImage?.message}</p>}
 
 
-                        <input type="submit" value={'ADD PRODUCT'}  className='py-2 mt-3 font-medium bg-orange-400 rounded-xl duration-300 hover:text-white cursor-pointer'/>
+                        <input type="submit" value={'ADD PRODUCT'}  className='py-2 mt-3 font-medium bg-orange-400 rounded-xl duration-300 hover:text-white dark:hover:text-black dark:text-white cursor-pointer'/>
 
                     </div>
                 </form>
