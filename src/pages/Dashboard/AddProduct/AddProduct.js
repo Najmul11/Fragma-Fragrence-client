@@ -17,7 +17,7 @@ const AddProduct = () => {
     const imageHostKey=process.env.REACT_APP_imagebb_api
 
     useEffect(()=>{
-        axios.get('http://localhost:5000/categories')
+        axios.get('https://new-folder-najmul11.vercel.app/categories')
         .then(res=>setCategoris(res.data))
     },[])
 
@@ -48,7 +48,7 @@ const AddProduct = () => {
                     sellerEmail:user?.email
                 }
 
-                fetch('http://localhost:5000/products',{
+                fetch('https://new-folder-najmul11.vercel.app/products',{
                     method:'POST',
                     headers:{
                         'content-type':'application/json',
@@ -75,7 +75,7 @@ const AddProduct = () => {
                         </label>
                         <select className="select select-bordered select-sm w-full max-w-xs" {...register('category', {required: "Category is required"}) }>
                             {
-                                categories.map(category=><option key={category.id}>{category.categoryName}</option>)
+                                categories.map(category=><option key={category._id}>{category.categoryName}</option>)
                             }
                         </select>
                         {errors.category && <p className='text-red-600 my-1'>{errors.category?.message}</p>}

@@ -24,7 +24,7 @@ const Login = () => {
         signIn(data.email, data.password)
             .then(result => {
                 if (data.option) {
-                    handleMarkSeller(data.email)
+                    // handleMarkSeller(data.email)
                 }
                 navigate(from, {replace: true});
             })
@@ -33,13 +33,6 @@ const Login = () => {
             });
     }
 
-    const handleMarkSeller=(email)=>{
-        fetch(`http://localhost:5000/users/usertype/${email}`,{
-            method:'PUT',
-        })
-        .then(res=>res.json())
-        .then(data=>{})
-    }
 
     const handleGoogleSignIn=()=>{
         setLoginError('');

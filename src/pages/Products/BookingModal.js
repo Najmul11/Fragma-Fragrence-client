@@ -29,7 +29,7 @@ const BookingModal = ({productData, setProductData}) => {
             phone,  
         }
 
-        fetch('http://localhost:5000/bookings',{
+        fetch('https://new-folder-najmul11.vercel.app/bookings',{
             method:'POST',
             headers:{
                 'content-type':'application/json'

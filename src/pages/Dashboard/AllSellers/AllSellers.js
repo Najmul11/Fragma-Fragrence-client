@@ -12,7 +12,7 @@ const AllSellers = () => {
     const {data:sellers=[], refetch, isLoading}=useQuery({
         queryKey:['sellers'],
         queryFn:async()=>{
-            const res=await fetch('http://localhost:5000/sellers')
+            const res=await fetch('https://new-folder-najmul11.vercel.app/sellers')
             const data= await res.json()
             return data
         }
@@ -22,7 +22,7 @@ const AllSellers = () => {
     }
 
     const handleVerify=(email)=>{
-        fetch(`http://localhost:5000/verifyseller/${email}`,{
+        fetch(`https://new-folder-najmul11.vercel.app/verifyseller/${email}`,{
             method:'PUt',
         })
         .then(res=>res.json())

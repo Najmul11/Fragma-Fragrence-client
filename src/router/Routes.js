@@ -87,7 +87,7 @@ export const router=createBrowserRouter([
     },
     {
         path:'/blog',
-        loader:()=>fetch('http://localhost:5000/qna'),
+        loader:()=>fetch('https://new-folder-najmul11.vercel.app/qna'),
         element:<Blog></Blog>
     },
     

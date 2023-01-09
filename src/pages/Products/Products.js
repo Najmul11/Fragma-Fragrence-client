@@ -12,14 +12,14 @@ const Products = () => {
     const [category, setCategory]=useState({})
 
     useEffect(()=>{
-        axios.get(`http://localhost:5000/category/${params.id}`)
+        axios.get(`https://new-folder-najmul11.vercel.app/category/${params.id}`)
         .then(res=>setCategory(res.data))
     },[params.id])
 
     const {data:products=[], isLoading}=useQuery({
         queryKey:['products'],
         queryFn:async()=>{
-            const res=await fetch(`http://localhost:5000/categories/${params.id}`)
+            const res=await fetch(`https://new-folder-najmul11.vercel.app/categories/${params.id}`)
             const data= await res.json()
             return data
         }

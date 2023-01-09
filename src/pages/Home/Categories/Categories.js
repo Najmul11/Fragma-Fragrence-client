@@ -5,7 +5,7 @@ import Category from './Category';
 const Categories = () => {
     const [categories, setCategoris]=useState([])
     useEffect(()=>{
-        axios.get('http://localhost:5000/categories')
+        axios.get('https://new-folder-najmul11.vercel.app/categories')
         .then(res=>setCategoris(res.data))
     },[])
     return (

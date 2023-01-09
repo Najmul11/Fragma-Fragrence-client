@@ -31,7 +31,7 @@ const ProductCard = ({product, setProductData}) => {
             resalePrice, 
             status 
         }
-        fetch('http://localhost:5000/wishlists',{
+        fetch('https://new-folder-najmul11.vercel.app/wishlists',{
             method:'POST',
             headers:{
                 'content-type':'application/json'

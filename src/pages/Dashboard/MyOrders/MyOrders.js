@@ -9,7 +9,7 @@ const MyOrders = () => {
     const {data:orders=[], isLoading}=useQuery({
         queryKey:['orders'],
         queryFn:async()=>{
-            const res=await fetch(`http://localhost:5000/orders?email=${user?.email}`)
+            const res=await fetch(`https://new-folder-najmul11.vercel.app/orders?email=${user?.email}`)
             const data= await res.json()
             return data
         }

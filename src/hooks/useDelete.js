@@ -1,6 +1,6 @@
 const useDelete=()=>{
     const handleDelete=(user, refetch, toast)=>{
-        fetch(`http://localhost:5000/users/${user._id}`,{
+        fetch(`https://new-folder-najmul11.vercel.app/users/${user._id}`,{
             method:'DELETE',
            
         })

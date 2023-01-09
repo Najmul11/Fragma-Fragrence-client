@@ -26,7 +26,13 @@ const Register = () => {
             }
             updateUserProfile(userInfo)
                 .then(() => { 
-                    saveUser(data.name, data.email)
+                    if (data.option) {
+                        const usage='seller'
+                        saveUser(data.name, data.email,usage)
+                    } else {
+                        saveUser(data.name, data.email)
+                    }
+                    
                     
                 })
                 .catch(err => console.log(err));
@@ -38,9 +44,9 @@ const Register = () => {
 
 
     // store user info in database
-    const saveUser=(name, email)=>{
-        const user={name, email}
-        fetch('http://localhost:5000/users',{
+    const saveUser=(name, email, usage='user')=>{
+        const user={name, email, usage}
+        fetch('https://new-folder-najmul11.vercel.app/users',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
@@ -97,6 +103,10 @@ const Register = () => {
                             })}
                             className="input input-bordered w-full max-w-xs dark:text-black" />
                         {errors.password && <p className='text-red-600 my-1'>{errors.password?.message}</p>}
+                    </div>
+                    <div className="w-full max-w-xs  flex items-center py-3 mt-3">
+                        <input type="checkbox"  {...register("option")} className="" /> 
+                        <span className="ml-2 label-text dark:text-gray-300">Create account as seller</span>
                     </div>
                     <input className='border border-orange-500 py-3 rounded-md hover:text-black text-white bg-orange-500 font-medium w-full my-3 cursor-pointer' value="SIGN UP" type="submit" />
                     <div>

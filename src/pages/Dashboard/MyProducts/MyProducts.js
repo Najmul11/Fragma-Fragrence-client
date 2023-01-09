@@ -13,7 +13,7 @@ const MyProducts = () => {
     const {data:products=[], refetch , isLoading}=useQuery({
         queryKey:['products'],
         queryFn:async()=>{
-            const res=await fetch(`http://localhost:5000/products?email=${user?.email}`)
+            const res=await fetch(`https://new-folder-najmul11.vercel.app/products?email=${user?.email}`)
             const data= await res.json()
             return data
         }
@@ -23,7 +23,7 @@ const MyProducts = () => {
     }
 
     const handleDelete=(id,name)=>{
-        fetch(`http://localhost:5000/products/${id}`,{
+        fetch(`https://new-folder-najmul11.vercel.app/products/${id}`,{
             method:'DELETE',
            
         })
@@ -37,7 +37,7 @@ const MyProducts = () => {
     }
 
     const handleAdvertise=(product)=>{
-        fetch('http://localhost:5000/advertisedproducts',{
+        fetch('https://new-folder-najmul11.vercel.app/advertisedproducts',{
                 method:'POST',
                 headers:{
                     'content-type':'application/json'
