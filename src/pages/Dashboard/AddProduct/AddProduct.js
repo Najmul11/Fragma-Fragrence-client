@@ -4,13 +4,16 @@ import axios from 'axios';
 import { AuthContext } from '../../../contexts/AuthProvider';
 import { toast } from 'react-hot-toast';
 import {useNavigate} from 'react-router-dom'
+import Loader from '../../Shared/Loader/Loader';
 
 
 
 
 const AddProduct = () => {
+    const [isLoading, setIsLoading]=useState(false)
     const {user}=useContext(AuthContext)
     const navigate=useNavigate()
+
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [categories, setCategoris]=useState([])
 
@@ -22,6 +25,7 @@ const AddProduct = () => {
     },[])
 
     const handleAddProduct=(data)=>{
+        setIsLoading(true)
         const image=data.productImage[0]
         const formData=new FormData()
         formData.append('image', image)
@@ -34,6 +38,7 @@ const AddProduct = () => {
         .then(res=>res.json())
         .then(imgData=>{
             if (imgData.success) {
+
                 const product={
                     categoryName:data.category,
                     productName:data.productName,
@@ -59,6 +64,7 @@ const AddProduct = () => {
                 .then(result=>{
                     toast.success(`${data.productName} is added successfully`)
                     navigate('/dashboard/myproducts')
+                    setIsLoading(false)
                 })
             }
         })
@@ -105,7 +111,9 @@ const AddProduct = () => {
                         {errors.productImage && <p className='text-red-600 my-1'>{errors.productImage?.message}</p>}
 
 
-                        <input type="submit" value={'ADD PRODUCT'}  className='py-2 mt-3 font-medium bg-orange-400 rounded-xl duration-300 hover:text-white dark:hover:text-black dark:text-white cursor-pointer'/>
+                        <button className='py-2 mt-3 font-medium flex justify-center bg-orange-400 rounded-xl duration-300 hover:text-white dark:hover:text-black dark:text-white cursor-pointer'>
+                           {isLoading ? <Loader></Loader> : 'Add product'}
+                        </button>
 
                     </div>
                 </form>

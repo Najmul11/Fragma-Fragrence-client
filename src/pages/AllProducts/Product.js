@@ -6,7 +6,7 @@ const Product = ({p}) => {
             <figure><img src={p.productImage} alt="" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{p.productName}</h2>
-                <p className='text-2xl'>{p.resalePrice}</p>
+                <p className='text-2xl'>${p.resalePrice}</p>
                 <div className="card-actions justify-end">
                 <label  className="px-5 py-2 font-medium border border-orange-500 hover:bg-orange-400 rounded-xl duration-300 dark:border-gray-200 dark:hover:text-black">Buy now</label>
                 </div>

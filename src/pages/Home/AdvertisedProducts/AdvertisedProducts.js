@@ -18,6 +18,7 @@ const AdvertisedProducts = () => {
         }
     })
 
+
     if (isLoading) {
         <div className='flex justify-center h-screen items-center'><progress className=" progress w-56 "></progress></div>
     }
@@ -28,7 +29,7 @@ const AdvertisedProducts = () => {
                 products.length ?
                 <div className='dark:bg-black '>
                     <div className='pt-5 pb-12'>
-                        <h2 className='text-5xl font-light dark:text-gray-400 text-center'>Peoples's choice best fragrences</h2>
+                        <h2 className='text-5xl font-light dark:text-gray-400 text-center'>People's choice best fragrences</h2>
                         <p className='dark:text-gray-400 text-center'>advertised by sellers</p>
                     </div>
                     <div className='bg-black lg:py-20 '>

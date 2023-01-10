@@ -23,9 +23,6 @@ const Login = () => {
 
         signIn(data.email, data.password)
             .then(result => {
-                if (data.option) {
-                    // handleMarkSeller(data.email)
-                }
                 navigate(from, {replace: true});
             })
             .catch(error => {

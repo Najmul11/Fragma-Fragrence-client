@@ -26,7 +26,9 @@ const AllSellers = () => {
             method:'PUt',
         })
         .then(res=>res.json())
-        .then(data=>{})
+        .then(data=>{
+            toast.success('you have successfully verified the seller')
+        })
     }
 
     const closeModal=()=>{
@@ -56,7 +58,12 @@ const AllSellers = () => {
                                 <td>{seller.email}</td>
                                 <td>
                                     <label onClick={()=>setModalData(seller)} htmlFor="confirm-modal" className="btn btn-xs bg-red-200 hover:bg-red-400 text-black">Delete</label>
-                                    <button onClick={()=>handleVerify(seller.email)} className="btn ml-3 btn-xs bg-green-200 hover:bg-green-300 text-black">Verify</button>
+                                    {
+                                        seller.status==='unverified' ?
+                                         <button onClick={()=>handleVerify(seller.email)} className="btn ml-3 btn-xs bg-green-200 hover:bg-green-300 text-black">Verify</button>
+                                         :
+                                         <span className='bg-gray-300 bg-opacity-50 px-2  rounded-lg ml-3'>verified</span>
+                                    }
                                 </td>
                             </tr>)
                         }
